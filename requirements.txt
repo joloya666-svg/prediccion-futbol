@@ -2,6 +2,6 @@ flask
 pandas
 numpy
 scikit-learn
-tensorflow
 joblib
 gunicorn
+tensorflow-cpu==2.15.0
