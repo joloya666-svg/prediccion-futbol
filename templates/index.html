@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predicción de Fútbol ⚽</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input {
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 250px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #22c55e;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 26px;
+            color: #38bdf8;
+        }
+        .detalles {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #cbd5f5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Predicción de Partido ⚽</h1>
+
+    <form method="POST">
+        <input name="home_team" placeholder="Equipo Local (ej: Arsenal)" required><br>
+        <input name="away_team" placeholder="Equipo Visitante (ej: Chelsea)" required><br>
+
+        <button type="submit">Predecir</button>
+    </form>
+
+    {% if resultado %}
+        <div class="resultado">
+            Resultado: {{ resultado }}
+        </div>
+    {% endif %}
+
+    {% if detalles %}
+        <div class="detalles">
+            <p>Forma Local: {{ detalles.home_form }}</p>
+            <p>Forma Visitante: {{ detalles.away_form }}</p>
+            <p>GD Local: {{ detalles.home_gd }}</p>
+            <p>GD Visitante: {{ detalles.away_gd }}</p>
+            <p>ELO Local: {{ detalles.home_elo }}</p>
+            <p>ELO Visitante: {{ detalles.away_elo }}</p>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
