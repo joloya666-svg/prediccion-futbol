@@ -3,9 +3,7 @@ import pandas as pd
 import joblib
 from tensorflow.keras.models import load_model
 
-# Cargar modelo y preprocesador
-model = load_model("modelo_futbol.h5")
-preprocessor = joblib.load("preprocessor.pkl")
+model = load_model("modelo_futbol.h5", compile=False)
 
 def predecir(home_team, away_team, home_form, away_form, home_gd, away_gd, home_elo, away_elo):
 
